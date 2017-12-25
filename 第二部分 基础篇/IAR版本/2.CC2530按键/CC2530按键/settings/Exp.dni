@@ -1,0 +1,56 @@
+[DisAssemblyWindow]
+NumStates=_ 1
+State 1=_ 1
+[Interrupts]
+Enabled=1
+[MemoryMap]
+Enabled=0
+TypeVolition=1
+UnspecRange=1
+ActionState=1
+[DebugChecksum]
+Checksum=-527926081
+[InstructionProfiling]
+Enabled=_ 0
+[CodeCoverage]
+Enabled=_ 0
+[Profiling]
+Enabled=0
+[StackPlugin]
+Enabled=1
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnHow=0
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[CallStack]
+ShowArgs=0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Breakpoints]
+Count=0
+[ChipconEmu]
+Stop timers on halt=0
+Leave target running=1
+[Aliases]
+A0=_ "E:\学习\电子\electron\zigbee\生产\WeBee zibee开发套件配套资源\例程和说明\1.基础实验\2.按键\main.c" "C:\Users\J\Desktop\网蜂(WeBee) ZigBee开发套件配套资源\网蜂(WeBee) ZigBee开发套件配套资源\示例程序和文档教程\1.基础实验\2.按键\main.c"
+Count=1
+SuppressDialog=1
