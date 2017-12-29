@@ -1,4 +1,4 @@
-"D:\file\project\MCU\ZigBee_project\project\第二部分 基础篇\IAR\2.CC2530按键\CC2530按键\CC2530.c"
+"F:\File\1 Hardware\1-2 ZigBee\笔记\ZigBee技术开发指南\教材\第二部分 基础篇\2.CC2530按键\代码\2.CC2530按键\CC2530按键\CC2530.c"
 -std=c99
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.4\8051\inc
@@ -298,8 +298,8 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.4\8051\inc\clib
 -D__XOR_DPSEL_SELECT__=1
 -D__PLAIN_INT_BITFIELD_IS_SIGNED__=1
 -D__IAR_COMPILERBASE__=592903
--D__DATE__="May 15 2016"
--D__TIME__="18:07:57"
+-D__DATE__="Dec 29 2017"
+-D__TIME__="15:40:09"
 -D__STDC__=1
 -D__STDC_VERSION__=199901L
 -D__STDC_HOSTED__=1

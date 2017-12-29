@@ -18,7 +18,7 @@ ActionState=1
 Enabled=0
 ShowSource=1
 [DebugChecksum]
-Checksum=1127676264
+Checksum=719204857
 [DisAssemblyWindow]
 NumStates=_ 1
 State 1=_ 1
@@ -26,13 +26,6 @@ State 1=_ 1
 Enabled=_ 0
 [CodeCoverage]
 Enabled=_ 0
-[Log file]
-LoggingEnabled=_ 0
-LogFile=_ ""
-Category=_ 0
-[TermIOLog]
-LoggingEnabled=_ 0
-LogFile=_ ""
 [StackPlugin]
 Enabled=1
 OverflowWarningsEnabled=1
@@ -43,6 +36,27 @@ UseTrigger=1
 TriggerName=main
 LimitSize=0
 ByteLimit=50
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
 [Breakpoints]
 Count=0
 [ChipconEmu]

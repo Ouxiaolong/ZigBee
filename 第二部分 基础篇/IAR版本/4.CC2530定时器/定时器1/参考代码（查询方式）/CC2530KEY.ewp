@@ -154,8 +154,8 @@
         </option>
         <option>
           <name>Input variant</name>
-          <version>0</version>
-          <state>1</state>
+          <version>1</version>
+          <state>2</state>
         </option>
         <option>
           <name>Input description</name>
@@ -163,8 +163,8 @@
         </option>
         <option>
           <name>Output variant</name>
-          <version>0</version>
-          <state>1</state>
+          <version>1</version>
+          <state>2</state>
         </option>
         <option>
           <name>Output description</name>
@@ -254,9 +254,9 @@
     </settings>
     <settings>
       <name>ICC8051</name>
-      <archiveVersion>4</archiveVersion>
+      <archiveVersion>5</archiveVersion>
       <data>
-        <version>9</version>
+        <version>10</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -497,7 +497,19 @@
           <state>1</state>
         </option>
         <option>
-          <name>IccRelaxedFpPrecision</name>
+          <name>IccCppInlineSemantics</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IccStaticDestr</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccFloatSemantics</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>NoSizeConstraints</name>
           <state>0</state>
         </option>
       </data>
@@ -506,7 +518,7 @@
       <name>A8051</name>
       <archiveVersion>2</archiveVersion>
       <data>
-        <version>5</version>
+        <version>6</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -577,10 +589,6 @@
         <option>
           <name>MultiLine</name>
           <state>0</state>
-        </option>
-        <option>
-          <name>NoStruct</name>
-          <state>1</state>
         </option>
         <option>
           <name>PageLengthCheck</name>
@@ -685,7 +693,7 @@
       <name>XLINK</name>
       <archiveVersion>3</archiveVersion>
       <data>
-        <version>17</version>
+        <version>18</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -1000,6 +1008,11 @@
           <name>Linker Far22 Heap Size</name>
           <state>1</state>
         </option>
+        <option>
+          <name>CrcUnitSize</name>
+          <version>0</version>
+          <state>0</state>
+        </option>
       </data>
     </settings>
     <settings>
@@ -1185,8 +1198,8 @@
         </option>
         <option>
           <name>Input variant</name>
-          <version>0</version>
-          <state>0</state>
+          <version>1</version>
+          <state>1</state>
         </option>
         <option>
           <name>Input description</name>
@@ -1194,8 +1207,8 @@
         </option>
         <option>
           <name>Output variant</name>
-          <version>0</version>
-          <state>0</state>
+          <version>1</version>
+          <state>1</state>
         </option>
         <option>
           <name>Output description</name>
@@ -1285,9 +1298,9 @@
     </settings>
     <settings>
       <name>ICC8051</name>
-      <archiveVersion>4</archiveVersion>
+      <archiveVersion>5</archiveVersion>
       <data>
-        <version>9</version>
+        <version>10</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>0</debug>
         <option>
@@ -1528,7 +1541,19 @@
           <state>1</state>
         </option>
         <option>
-          <name>IccRelaxedFpPrecision</name>
+          <name>IccCppInlineSemantics</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IccStaticDestr</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccFloatSemantics</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>NoSizeConstraints</name>
           <state>0</state>
         </option>
       </data>
@@ -1537,7 +1562,7 @@
       <name>A8051</name>
       <archiveVersion>2</archiveVersion>
       <data>
-        <version>5</version>
+        <version>6</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>0</debug>
         <option>
@@ -1608,10 +1633,6 @@
         <option>
           <name>MultiLine</name>
           <state>0</state>
-        </option>
-        <option>
-          <name>NoStruct</name>
-          <state>1</state>
         </option>
         <option>
           <name>PageLengthCheck</name>
@@ -1716,7 +1737,7 @@
       <name>XLINK</name>
       <archiveVersion>3</archiveVersion>
       <data>
-        <version>17</version>
+        <version>18</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>0</debug>
         <option>
@@ -2030,6 +2051,11 @@
         <option>
           <name>Linker Far22 Heap Size</name>
           <state>1</state>
+        </option>
+        <option>
+          <name>CrcUnitSize</name>
+          <version>0</version>
+          <state>0</state>
         </option>
       </data>
     </settings>

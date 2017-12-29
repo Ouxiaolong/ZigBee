@@ -2,26 +2,49 @@
 
 <project>
   <fileVersion>2</fileVersion>
-  <fileChecksum>494315599</fileChecksum>
+  <fileChecksum>2641155716</fileChecksum>
   <configuration>
     <name>Debug</name>
     <outputs>
-      <file>$PROJ_DIR$\Uart.c</file>
       <file>$PROJ_DIR$\Debug\Obj\CC2530KEY.pbd</file>
       <file>$PROJ_DIR$\CC2530.c</file>
+      <file>$PROJ_DIR$\Uart.c</file>
       <file>$TOOLKIT_DIR$\inc\ioCC2530.h</file>
       <file>$PROJ_DIR$\Debug\Exe\CC2530KEY.d51</file>
-      <file>$PROJ_DIR$\Debug\Exe\CC2530KEY.hex</file>
-      <file>$TOOLKIT_DIR$\lib\clib\cl-pli-blxd-1e16x01.r51</file>
-      <file>$PROJ_DIR$\Debug\Obj\CC2530.r51</file>
-      <file>$PROJ_DIR$\Uart.h</file>
-      <file>$TOOLKIT_DIR$\config\devices\Texas Instruments\lnk51ew_cc2530F256_banked.xcl</file>
       <file>$TOOLKIT_DIR$\inc\clib\string.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\CC2530.pbi</file>
       <file>$TOOLKIT_DIR$\inc\clib\sysmac.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\CC2530.pbi</file>
+      <file>$TOOLKIT_DIR$\config\devices\Texas Instruments\lnk51ew_cc2530F256_banked.xcl</file>
+      <file>$PROJ_DIR$\Uart.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\CC2530.r51</file>
+      <file>$TOOLKIT_DIR$\lib\clib\cl-pli-blxd-1e16x01.r51</file>
+      <file>$PROJ_DIR$\Debug\Exe\CC2530KEY.hex</file>
       <file>$PROJ_DIR$\Debug\Obj\Uart.r51</file>
       <file>$PROJ_DIR$\Debug\Obj\Uart.pbi</file>
     </outputs>
+    <file>
+      <name>$PROJ_DIR$\CC2530.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 7</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 10</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 3 9 5 6</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 3 9 5 6</file>
+        </tool>
+      </inputs>
+    </file>
     <file>
       <name>$PROJ_DIR$\Uart.c</name>
       <outputs>
@@ -37,43 +60,11 @@
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 8 3 10 12</file>
+          <file> 9 3 5 6</file>
         </tool>
         <tool>
           <name>ICC8051</name>
-          <file> 8 3 10 12</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Obj\CC2530KEY.pbd</name>
-      <inputs>
-        <tool>
-          <name>BILINK</name>
-          <file> 11 14</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CC2530.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 11</file>
-        </tool>
-        <tool>
-          <name>ICC8051</name>
-          <file> 7</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 3 8 10 12</file>
-        </tool>
-        <tool>
-          <name>ICC8051</name>
-          <file> 3 8 10 12</file>
+          <file> 9 3 5 6</file>
         </tool>
       </inputs>
     </file>
@@ -82,13 +73,13 @@
       <outputs>
         <tool>
           <name>XLINK</name>
-          <file> 5</file>
+          <file> 12</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>XLINK</name>
-          <file> 9 7 13 6</file>
+          <file> 8 10 13 11</file>
         </tool>
       </inputs>
     </file>
@@ -97,7 +88,7 @@
       <outputs>
         <tool>
           <name>XLINK</name>
-          <file> 4 5</file>
+          <file> 4 12</file>
         </tool>
       </outputs>
     </file>
