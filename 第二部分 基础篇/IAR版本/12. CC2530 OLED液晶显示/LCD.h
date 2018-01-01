@@ -1,14 +1,5 @@
-/**
-  ******************************************************************************
-  * @file        LCD.h
-  * @author      BruceOu
-  * @version     V1.0
-  * @date        2017-12
-  * @brief       LCD
-  ******************************************************************************
-  */
-/**Includes*********************************************************************/
 #include "codetab.h"
+#include <string.h>
 
 
 #define LCD_SCL P1_2       //SCLK  Ê±ÖÓ D0£¨SCLK£©
@@ -25,6 +16,7 @@
 #define X_WIDTH        128
 #define Y_WIDTH        64
 
+unsigned char g_LcdBuff[Y_WIDTH/8][X_WIDTH];//LCDÏÔ´æµÄ»º³å
 
 void DelayMS(unsigned int msec)
 { 
@@ -236,17 +228,7 @@ void Draw_BMP(unsigned char x0, unsigned char y0,unsigned char x1, unsigned char
     }
 } 
 
-void LCD_welcome()
+void LCD_Clear(void)
 {
-	int i=0;
-
-    for(i=0; i<4; i++)
-    {
-      LCD_P16x16Ch(16*(i+2), 0, i);
-    }
-    
-    for(i=0; i<7; i++)
-    {
-      LCD_P16x16Ch(8+16*i, 2, 4+i);
-    }
+    memset(g_LcdBuff, 0, sizeof(g_LcdBuff));
 }
