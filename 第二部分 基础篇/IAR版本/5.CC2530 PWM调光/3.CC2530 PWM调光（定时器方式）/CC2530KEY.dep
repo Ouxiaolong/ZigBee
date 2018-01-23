@@ -6,8 +6,8 @@
   <configuration>
     <name>Debug</name>
     <outputs>
-      <file>$TOOLKIT_DIR$\inc\ioCC2530.h</file>
       <file>$PROJ_DIR$\CC2530.c</file>
+      <file>$TOOLKIT_DIR$\inc\ioCC2530.h</file>
       <file>$PROJ_DIR$\Debug\Obj\CC2530KEY.pbd</file>
       <file>$PROJ_DIR$\Debug\Exe\CC2530KEY.d51</file>
       <file>$TOOLKIT_DIR$\config\devices\Texas Instruments\lnk51ew_cc2530F256_banked.xcl</file>
@@ -20,22 +20,22 @@
       <name>$PROJ_DIR$\CC2530.c</name>
       <outputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 6</file>
-        </tool>
-        <tool>
           <name>BICOMP</name>
           <file> 5</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 6</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 0</file>
+          <name>BICOMP</name>
+          <file> 1</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 0</file>
+          <name>ICC8051</name>
+          <file> 1</file>
         </tool>
       </inputs>
     </file>

@@ -29,7 +29,7 @@ void InitIO(void);		//初始化LED控制IO口函数
   */
 void main (void)
 {
-  unsigned int CYCLE=600,PWM_LOW=0;//定义周期并赋值
+  uint CYCLE=600,PWM_LOW=0;//定义周期并赋值
   InitIO();
   while (1)         //主循环
   {
