@@ -4,163 +4,122 @@
   * @author      BruceOu
   * @version     V1.0
   * @date        2017-12
-  * @brief       ÖĞ¶Ï»½ĞÑÏµÍ³
+  * @brief       LED1é—ªçƒ3æ¬¡åè¿›å…¥ç¡çœ çŠ¶æ€ï¼Œé€šè¿‡æŒ‰ä¸‹æŒ‰é”®K2äº§ç”Ÿå¤–éƒ¨ä¸­æ–­è¿›è¡Œå”¤é†’
   ******************************************************************************
   */
 /**Includes*********************************************************************/
 #include <ioCC2530.h>
 
-/**ºê¶¨Òå***********************************************************************/
-//¶¨ÒåÊı¾İÀàĞÍ
-#define uint unsigned int
-#define uchar unsigned char
+/**å®å®šä¹‰***********************************************************************/
+//å®šä¹‰æ•°æ®ç±»å‹
+typedef unsigned char uchar;
+typedef unsigned int  uint;
 
-#define PM0 0
-#define PM1 1
-#define PM2 2
-#define PM3 3
+//å®šä¹‰IOå£
+#define LED1 P1_0            //P1.0å£æ§åˆ¶LED
+#define KEY2 P2_0            //P2.0å£æ§åˆ¶KEY2
 
-#define LED1 P1_0
-#define LED2 P1_1   //LEDµÆ¿ØÖÆIO¿Ú¶¨Òå
-
-/**º¯ÊıÉùÃ÷*********************************************************************/
-void Delay(uint xms);
-void Init_IO_AND_LED(void);
-void SysWorkMode(uchar mode);
-void SysPowerMode(uchar mode);
+/**å‡½æ•°å£°æ˜*********************************************************************/
+void DelayMS(uint msec);
+void InitLed(void);
+void InitKey();
+void SysPowerMode(uchar mode) ;
 
 /**
-  * @brief     ÖĞ¶Ï´¦Àíº¯Êı-ÏµÍ³»½ĞÑ
+  * @brief     ä¸»å‡½æ•°
   * @param     None
   * @retval    None
   */
-#pragma vector = P0INT_VECTOR
- __interrupt void P0_ISR(void)
- {
-  if(P0IFG>0)
-  {
-     P0IFG = 0;
-  }
-  
-  P0IF = 0;
-  //SysWorkMode(PM3);
-  SysPowerMode(4);
- }
-
-
-/**
-  * @brief     Ö÷º¯Êı
-  * @param     None
-  * @retval    None
-  */
-void main()
-{
-  uchar count = 0;
-  Init_IO_AND_LED();
-  LED1 = 0 ;       //¿ªLED1£¬ÏµÍ³¹¤×÷Ö¸Ê¾
-  Delay(500);       //ÑÓÊ±	
-  while(1)
-  {
-    LED2 = !LED2;
-    LED1 = 0;
-    count++;
-    if(count >= 6)
-    {
-      count = 0;     
-      LED1 = 1;
-      //SysWorkMode(PM2);
-      SysPowerMode(3);
-      //3´ÎÉÁË¸ºó½øÈëË¯Ãß×´Ì¬PM3
-    }
-   
-    Delay(500);
+void main(void)
+{   
+    uchar i=0;  
+      
+    InitLed();		     //è®¾ç½®LEDç¯ç›¸åº”çš„IOå£     
+    InitKey();               //è®¾ç½®KEYç›¸åº”çš„IOå£
     
-  };
+    while(1)
+    {
+        for (i=0; i<6; i++)  //LEDé—ªçƒ3æ¬¡æé†’ç”¨æˆ·å°†è¿›å…¥ç¡çœ æ¨¡å¼
+        {
+            LED1 = ~LED1;
+            DelayMS(500);
+        }
+
+        SysPowerMode(3);     //è¿›å…¥ç¡çœ æ¨¡å¼PM3,æŒ‰ä¸‹æŒ‰é”®K1ä¸­æ–­å”¤é†’ç³»ç»Ÿ 
+    }
 }
 
 /**
-  * @brief     ÑÓÊ±º¯Êı,´óÔ¼1ºÁÃë
-  * @param     xms ÑÓÊ±´óĞ¡
+  * @brief     å»¶æ—¶å‡½æ•°,å¤§çº¦1æ¯«ç§’
+  * @param     msec å»¶æ—¶å¤§å°
   * @retval    None
   */
-void Delay(uint xms)
-{
-   uint i,j;
-    for(i=xms;i>0;i--)
-     for(j=587;j>0;j--);   
+void DelayMS(uint msec)
+{ 
+    uint i,j;
+    
+    for (i=0; i<msec; i++)
+        for (j=0; j<535; j++);
 }
 
 /**
-  * @brief     ÏµÍ³¹¤×÷Ä£Ê½Ñ¡Ôñº¯Êı
+  * @brief     LEDæ§åˆ¶IOå£åˆå§‹åŒ–å‡½æ•°
+  * @param     None
+  * @retval    None
+  */
+void InitLed(void)
+{
+    P1DIR |= 0x01;           //P1.0å®šä¹‰ä¸ºè¾“å‡ºå£
+    LED1 = 1;                //LEDç¯ä¸Šç”µé»˜è®¤ä¸ºç†„ç­ 
+}
+
+/**
+  * @brief     æŒ‰é”®æ§åˆ¶IOå£åˆå§‹åŒ–å‡½æ•°
+  * @param     None
+  * @retval    None
+  */
+void InitKey()
+{
+    P2IEN |= 0x1;    // P2.0 è®¾ç½®ä¸ºä¸­æ–­æ–¹å¼ 1ï¼šä¸­æ–­ä½¿èƒ½
+    PICTL |= 0x8;    //ä¸‹é™æ²¿è§¦å‘   
+    IEN2 |= 0x2;     //å…è®¸P2å£ä¸­æ–­; 
+    P2IFG = 0x00;    //åˆå§‹åŒ–ä¸­æ–­æ ‡å¿—ä½
+    EA = 1;          //æ‰“å¼€æ€»ä¸­æ–­
+}
+
+/**
+  * @brief     ç³»ç»Ÿå·¥ä½œæ¨¡å¼é€‰æ‹©å‡½æ•°
   * @param     None
   * @retval    None
   * @attention
   *            para1  0 	1	2	3									
   *            mode 	PM0	PM1	PM2	PM3													
   */
-void SysPowerMode(uchar mode)
-{
-  uchar i,j;
-  i = mode;
-  if(mode<4)
-  {
-    SLEEPCMD &= 0xFC;     
-    SLEEPCMD |= i;       //ÉèÖÃÏµÍ³Ë¯ÃßÄ£Ê½
-    for(j=0;j<4;j++);
-    {
-      PCON = 0x01;         //½øÈëË¯ÃßÄ£Ê½
-    }
-  }
-  else
-  {
-    PCON = 0x00;             //ÏµÍ³»½ĞÑ
-  }
+void SysPowerMode(uchar mode) 
+{ 
+    if(mode > 0 && mode < 4) 
+    {  
+        SLEEPCMD |= mode;    //è®¾ç½®ç³»ç»Ÿç¡çœ æ¨¡å¼ 
+        PCON = 0x01;         //è¿›å…¥ç¡çœ æ¨¡å¼ ,é€šè¿‡ä¸­æ–­å”¤é†’
+    } 
+    else 
+        PCON = 0x00;         //ä¸»åŠ¨/ç©ºé—²æ¨¡   é€šè¿‡ä¸­æ–­å”¤é†’ç³»ç»Ÿ 
 }
 
 /**
-  * @brief     ¹¤×÷Ä£Ê½º¯Êı
-  * @param     mode ¹¤×÷Ä£Ê½
-  * @retval    None
-  */
-void SysWorkMode(uchar mode)
-{
-  switch (mode) 
-  {
-  case PM0:
-    SLEEPCMD |= PM0; // ÉèÖÃÏµÍ³¹¤×÷Ä£Ê½
-    break;
-  case PM1:
-    SLEEPCMD |= PM1; // ÉèÖÃÏµÍ³¹¤×÷Ä£Ê½
-    break;
-  case PM2:
-    SLEEPCMD |= PM2; // ÉèÖÃÏµÍ³¹¤×÷Ä£Ê½
-    break;
-  case PM3:
-    SLEEPCMD |= PM3; // ÉèÖÃÏµÍ³¹¤×÷Ä£Ê½
-    break;
-  }
-  //ÖÃ 1 ½«Ç¿ÖÆÏµÍ³½øÈë SLEEPCMD ËùÖ¸¶¨µÄµçÔ´Ä£Ê½£¬ËùÓĞÖĞ¶ÏĞÅºÅ¶¼¿ÉÒÔÇå³ı´ËÖÃÎ»
-  PCON = 0x01;
-
-}
-
-/**
-  * @brief     LED¿ØÖÆIO¿Ú³õÊ¼»¯º¯Êı
+  * @brief     ä¸­æ–­å¤„ç†å‡½æ•°-ç³»ç»Ÿå”¤é†’
   * @param     None
   * @retval    None
   */
-void Init_IO_AND_LED(void)
-{
-  P1DIR |= 0X03;
-  LED1 = 1;
-  LED2 = 1;
- 
-  P0INP &= ~0X10;   //ÉèÖÃP0ÊäÈëµçÂ·Ä£Ê½ÎªÉÏÀ­/ÏÂÀ­
-  P0IEN |= 0X10;     //P01ÉèÖÃÎªÖĞ¶Ï·½Ê½
-  PICTL |= 0X10;     //ÏÂ½µÑØ´¥·¢
+#pragma vector = P2INT_VECTOR    
+__interrupt void P2_ISR(void) 
+{ 
+    if(P2IFG > 0) 
+    { 
+        P2IFG = 0;           //æ¸…æ ‡å¿—ä½
+    } 
     
-  EA = 1;
-  IEN1 |= 0X20;      // ¿ªP0¿Ú×ÜÖĞ¶Ï
-  P0IFG |= 0x00;     //ÇåÖĞ¶Ï±êÖ¾
-}
+    P2IF = 0; 
+    SysPowerMode(4);         //æ­£å¸¸å·¥ä½œæ¨¡å¼
+} 
 
