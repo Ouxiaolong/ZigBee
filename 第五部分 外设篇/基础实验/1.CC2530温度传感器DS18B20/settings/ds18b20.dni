@@ -1,0 +1,51 @@
+[DebugChecksum]
+Checksum=685403815
+[DisAssemblyWindow]
+NumStates=_ 1
+State 1=_ 1
+[InstructionProfiling]
+Enabled=_ 0
+[CodeCoverage]
+Enabled=_ 0
+[StackPlugin]
+Enabled=1
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnHow=0
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Breakpoints]
+Count=0
+[ChipconEmu]
+Stop timers on halt=0
+Leave target running=1
+[Aliases]
+A0=_ "E:\c\zigbee开发板\代码及其教程\1.基础篇-CC2530实验代码教程\17.温度传感器DS18B20\DS18B20\Source\main.c" ""
+A1=_ "F:\File\1 Hardware\1-2 ZigBee\ZigBee技术开发指南\教材\第五部分 外设篇\基础实验\1.CC2530温度传感器DS18B20\1.CC2530温度传感器DS18B20\Source\LCD.h" ""
+A2=_ "F:\File\1 Hardware\1-2 ZigBee\ZigBee技术开发指南\教材\第五部分 外设篇\基础实验\1.CC2530温度传感器DS18B20\1.CC2530温度传感器DS18B20\Source\main.c" ""
+Count=3
+SuppressDialog=0
